@@ -1,11 +1,22 @@
 import './Main.css'
-import {Fragment} from 'react';
+import Post from '../Post/Post';
 
-const Main = () => {
+const Main = ({
+    posts
+}) => {
     return (
-        <main className='main-container'>
-            <h1>Soooooome Heading</h1>
-            <p>some posts</p>
+        <main className="main-container">
+            <h1>Soooooooome Heading</h1>
+
+            <div className="posts">
+                {posts.map(x => 
+                    <Post 
+                        key={x.id} 
+                        content={x.content}
+                        author={x.author}
+                    />
+                )}
+            </div>
         </main>
     );
 }
